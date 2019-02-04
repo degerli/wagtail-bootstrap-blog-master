@@ -123,3 +123,51 @@ Licensed under MIT
   background: #fff;
   min-height: 460px;
 }
+
+.photo
+{
+  z-index: 3;
+  position: relative;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  background-color: white;
+  margin: 0 auto;
+  background-image: url("https://filmshotfreezer.files.wordpress.com/2011/07/untitled-1.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+  top:50px;
+  -webkit-box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.3);
+  -moz-box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.3);
+  box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.3);
+  -webkit-transition: top 0.7s ease-in-out, background 0.15s ease;
+  -moz-transition:    top 0.7s ease-in-out, background 0.15s ease;
+  -o-transition:      top 0.7s ease-in-out, background 0.15s ease;
+  -ms-transition:     top 0.7s ease-in-out, background 0.15s ease;
+}
+
+.qout ul
+{
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin-top:25px;
+  margin-bottom:30px;
+  font-size: 20px;
+  -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition:    all 0.7s ease-in-out;
+  -o-transition:      all 0.7s ease-in-out;
+  -ms-transition:     all 0.7s ease-in-out;
+}
+
+.qout i
+{
+  font-size: 25px;
+  display: inline-block;
+  margin-top:10px;
+  margin-left: 40px;
+  margin-right: 150px;
+  width: 300px;;
+  text-align: left;
+  color: #C7D0E1;
+}
