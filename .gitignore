@@ -1,6 +1,6 @@
 *.py[cod]
 .DS_Store
-
+db.sqlite3
 deploy/
 fabfile.py
 .idea/
