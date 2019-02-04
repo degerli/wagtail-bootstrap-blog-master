@@ -3,9 +3,11 @@
  * Copyright 2013-2017 Start Bootstrap
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-blog-home/blob/master/LICENSE)
  */
+@import url('https://fonts.googleapis.com/css?family=Lalezar');
 
 body {
-  padding-top: 70px;
+  margin-top: 55px;
+  font-size: 16px;
 }
 
 /* https://bootsnipp.com/snippets/featured/user-profile-sidebar */
@@ -19,7 +21,112 @@ Licensed under MIT
 /* body { */
 /*   background: #F1F3FA; */
 /* } */
+.home-header {
 
+}
+.home-page {
+  font-family: 'Lalezar', cursive;
+}
+.home-header > div {
+    height: calc(70vh - 55px);
+    overflow: hidden;
+    min-height: 500px;
+    width: 100%;
+    text-align: center;
+}
+.home-card-text {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: wheat;
+    text-decoration: none;
+  font-size: 4rem;
+      background: #00000059;
+    padding: 13px;
+}
+.home-card-text a {
+  color: wheat;
+  text-decoration: none;
+}
+a {
+  cursor: pointer;
+}
+#cat1 > div {
+    padding: 0;
+  margin: 0;
+    height: calc(60vh);
+  overflow: hidden;
+}
+.home-page  img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+figure.effect-apollo {
+	background: #634a00;
+  margin: 0;
+  height:100%;
+  width:100%;
+}
+
+figure.effect-apollo img {
+	opacity: 0.9;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: scale3d(1.05,1.05,1);
+	transform: scale3d(1.05,1.05,1);
+}
+
+figure.effect-apollo figcaption::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(41, 41, 41, 0.5);
+	content: '';
+	-webkit-transition: -webkit-transform 0.6s;
+	transition: transform 0.6s;
+	-webkit-transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-100%,0);
+	transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-100%,0);
+}
+
+figure.effect-apollo p {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	margin: 3em;
+	padding: 0 1em;
+	max-width: 150px;
+	border-right: 4px solid #fff;
+	text-align: right;
+	opacity: 0;
+	-webkit-transition: opacity 0.35s;
+	transition: opacity 0.35s;
+}
+
+figure.effect-apollo h2 {
+}
+
+figure.effect-apollo:hover img {
+	opacity: 0.6;
+	-webkit-transform: scale3d(1,1,1);
+	transform: scale3d(1,1,1);
+}
+
+figure.effect-apollo:hover figcaption::before {
+	-webkit-transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);
+	transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);
+}
+
+figure.effect-apollo:hover p {
+	opacity: 1;
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+}
 /* Profile container */
 .profile {
   margin: 20px 0;
