@@ -26,6 +26,7 @@
   </head>
 
   <body>
+{% if self.title != "home" %}
 
     {% wagtailuserbar %}
     <!-- Navigation -->
@@ -46,7 +47,7 @@
           {% endif %}
       </div>
     </nav>
-
+{% endif %}
     <!-- Page Content -->
     {% block maincontent %}
 

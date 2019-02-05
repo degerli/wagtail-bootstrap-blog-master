@@ -6,7 +6,7 @@
 @import url('https://fonts.googleapis.com/css?family=Lalezar');
 
 body {
-  margin-top: 55px;
+    margin-top: 70px;
   font-size: 16px;
 }
 
@@ -26,9 +26,11 @@ Licensed under MIT
 }
 .home-page {
   font-family: 'Lalezar', cursive;
+    background-color: wheat;
+    max-width: 100%;
 }
 .home-header > div {
-    height: calc(70vh - 55px);
+    height: 700px;
     overflow: hidden;
     min-height: 500px;
     width: 100%;
@@ -56,7 +58,7 @@ a {
 #cat1 > div {
     padding: 0;
   margin: 0;
-    height: calc(60vh);
+    height: 800px;
   overflow: hidden;
 }
 .home-page  img {
@@ -277,4 +279,22 @@ figure.effect-apollo:hover p {
   width: 300px;;
   text-align: left;
   color: #C7D0E1;
+}
+@media (min-width: 0px) and (max-width: 576px) {
+    .home-header > div {
+        height: 600px;
+    }
+    #cat1 > div {
+        height: 600px;
+    }
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) { }
+
+@media (min-width: 1200px) {
+
 }
