@@ -7,7 +7,7 @@
 
 body {
     margin-top: 70px;
-  font-size: 16px;
+    font-size: 16px;
 }
 
 /* https://bootsnipp.com/snippets/featured/user-profile-sidebar */
@@ -44,8 +44,8 @@ Licensed under MIT
     text-align: center;
     color: wheat;
     text-decoration: none;
-  font-size: 4rem;
-      background: #00000059;
+    font-size: 4rem;
+    background: #00000059;
     padding: 13px;
 }
 .home-card-text a {
@@ -55,11 +55,11 @@ Licensed under MIT
 a {
   cursor: pointer;
 }
-#cat1 > div {
+.cat > div {
     padding: 0;
-  margin: 0;
-    height: 800px;
-  overflow: hidden;
+    margin: 0;
+    height: 600px;
+    overflow: hidden;
 }
 .home-page  img {
   height: 100%;
@@ -69,9 +69,9 @@ a {
 
 figure.effect-apollo {
 	background: #634a00;
-  margin: 0;
-  height:100%;
-  width:100%;
+    margin: 0;
+    height:100%;
+    width:100%;
 }
 
 figure.effect-apollo img {
@@ -284,7 +284,7 @@ figure.effect-apollo:hover p {
     .home-header > div {
         height: 600px;
     }
-    #cat1 > div {
+    .cat > div {
         height: 600px;
     }
 }

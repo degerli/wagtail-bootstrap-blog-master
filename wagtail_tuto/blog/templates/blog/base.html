@@ -61,8 +61,10 @@
 
 
     <!-- jQuery -->
-    <script src="{% static 'blog/js/jquery.js' %}"></script>
-
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
     <script src="https://files.codepedia.info/files/uploads/iScripts/html2canvas.js"></script>
 
     <!-- RTL Bootstrap Core JavaScript -->
@@ -80,10 +82,15 @@
           gtag('config', 'UA-39890589-7');
     }
     function removeEle(val) {
-        var elem = document.getElementById('cat1');
-        elem.parentNode.removeChild(elem);
-        elem = document.getElementById("cat"+val);
-        elem.style.display = 'flex';
+        var elem = $("#cat"+val);
+        console.log(elem);
+        elem.css('display', 'flex').hide().fadeIn(500);
+
+        elem = $('#cat1');
+        $('div', elem).each(function () {
+            $(this).hide();
+{#            speed = speed - 200;#}
+        });
         return false;
     }
     </script>
