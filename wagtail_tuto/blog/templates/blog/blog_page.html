@@ -44,21 +44,17 @@
                 {% endfor %}
             </div>
             {% elif self.title == "محاضراته" or self.title == "أغاني" %}
-            <div class="row">
                 {% paginate 5 posts %}
                 {% for post in posts %}
-                <div class="col-sm-6" style="display:inline-block;">
+                <div style="max-width: 500px; padding-bottom: 0">
                     {% if post.body %}
                         {{post.body}}
+                        {{post.title}}
+                        {{post.date}}
                     {% endif %}
                 </div>
                 {% endfor %}
-            </div>
-            {% else %}
-                {% if self.header_image %}
-                {% image self.header_image original as header_image %}
-                    <img src="{{ header_image.url }}" class="card-img-top" ></img>
-                {% endif %}
+            {% elif self.title == "مقالاته" or self.title == "كتابات" %}
                 <div class="row">
                     {% paginate 5 posts %}
                     {% for post in posts %}

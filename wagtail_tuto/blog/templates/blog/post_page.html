@@ -23,9 +23,13 @@
                 {% post_categories %}
             </p>
             <hr>
-
-            {{ post.body|markdown|safe }}
+            <div id="printableArea">
+                {{ post.body|markdown|safe }}
+            </div>
             <hr>
+
+            <input type="button" onclick="printDiv('printableArea')" value="تحميل النص" />
+            <input type="button" onclick="changeFont('printableArea')" value="شبيه لخط باسل" />
 
             {% post_tags_list %}
 
@@ -40,6 +44,21 @@
                 },
                 "HTML-CSS": { availableFonts: ["TeX"] }
               });
+
+                function changeFont(divName) {
+                    document.getElementById(divName).style.fontFamily = baselwoff;
+                }
+
+                function printDiv(divName) {
+                    var printContents = document.getElementById(divName).innerHTML;
+                    var originalContents = document.body.innerHTML;
+
+                    document.body.innerHTML = printContents;
+
+                    window.print();
+
+                    document.body.innerHTML = originalContents;
+                }
             </script>
 
             <script type="text/javascript"
