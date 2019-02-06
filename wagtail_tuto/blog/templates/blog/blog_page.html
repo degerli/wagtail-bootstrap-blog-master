@@ -2,6 +2,7 @@
 {% extends "blog/base.html" %}
 
 {% load static wagtailcore_tags wagtailimages_tags blogapp_tags el_pagination_tags wagtailmd %}
+{% load wagtailembeds_tags %}
 
 {% block content %}
 <div class="container">
@@ -40,6 +41,17 @@
                             </div>
                         </div>
                     </div>
+                {% endfor %}
+            </div>
+            {% elif self.title == "محاضراته" or self.title == "أغاني" %}
+            <div class="row">
+                {% paginate 5 posts %}
+                {% for post in posts %}
+                <div class="col-sm-6" style="display:inline-block;">
+                    {% if post.body %}
+                        {{post.body}}
+                    {% endif %}
+                </div>
                 {% endfor %}
             </div>
             {% else %}

@@ -112,11 +112,15 @@ class BlogPage(RoutablePageMixin, Page):
 
 
 class PostPage(Page):
-    body = MarkdownField()
-    date = models.DateTimeField(verbose_name="Post date", default=datetime.datetime.today)
-    excerpt = MarkdownField(
-        verbose_name='excerpt', blank=True,
-    )
+
+    author = models.CharField(max_length=255)
+    date = models.DateField("Post date")
+    body = StreamField([
+        ('heading', blocks.CharBlock(classname="full title")),
+        ('paragraph', blocks.RichTextBlock()),
+        ('image', ImageChooserBlock()),
+        ('embedded_video', EmbedBlock(icon="media")),
+    ])
 
     header_image = models.ForeignKey(
         'wagtailimages.Image',
@@ -130,8 +134,8 @@ class PostPage(Page):
 
     content_panels = Page.content_panels + [
         ImageChooserPanel('header_image'),
-        MarkdownPanel("body"),
-        MarkdownPanel("excerpt"),
+        FieldPanel('author'),
+        StreamFieldPanel('body'),
         FieldPanel('categories', widget=forms.CheckboxSelectMultiple),
         FieldPanel('tags'),
     ]
