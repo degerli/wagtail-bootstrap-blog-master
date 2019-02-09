@@ -23,7 +23,7 @@
                 {% post_categories %}
             </p>
             <hr>
-            <div id="printableArea">
+            <div id="printableArea" class="printableArea">
                 {{ post.body|markdown|safe }}
             </div>
             <hr>
@@ -44,10 +44,6 @@
                 },
                 "HTML-CSS": { availableFonts: ["TeX"] }
               });
-
-                function changeFont(divName) {
-                    document.getElementById(divName).style.fontFamily = baselwoff;
-                }
 
                 function printDiv(divName) {
                     var printContents = document.getElementById(divName).innerHTML;

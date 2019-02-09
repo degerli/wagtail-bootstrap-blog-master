@@ -372,8 +372,3 @@ figure.effect-apollo:hover p {
 @media (min-width: 1200px) {
 
 }
-
-@font-face {
-    font-family: 'baselwoff';
-    src: url('static/font/Basl.woff') format('woff');
-}
