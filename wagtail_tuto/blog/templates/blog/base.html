@@ -93,7 +93,39 @@
         });
         return false;
     }
+
     </script>
+    {% if self.title == "home" %}
+    <script type="text/javascript">
+
+    var arrowBounce = function() {
+        var arrow = $(".arrow");
+        if (arrow.hasClass("lift")) {
+            arrow.removeClass("lift");
+        } else {
+            arrow.addClass("lift");
+        }
+    };
+    setInterval(arrowBounce, 800);
+    var prev=0;
+    $(window).on('scroll', function(){
+        var scrollTop = $(window).scrollTop();
+        if (scrollTop > 200){
+          $(".arrow").fadeOut("slow");
+        } else {
+          $(".arrow").fadeIn("slow");
+        }
+    });
+
+
+    $(".arrow").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#cat1").offset().top
+        }, 1000);
+    });
+    </script>
+    {% endif %}
+
     {% if self.title == "منشوراته" %}
     <script type="text/javascript">
         function download(name) {
