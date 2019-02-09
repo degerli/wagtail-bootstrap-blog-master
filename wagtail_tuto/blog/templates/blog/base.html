@@ -13,7 +13,8 @@
 
     <link rel="canonical" href="{% block canonical %}{% canonical_url %}{% endblock canonical %}"/>
 
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
 
     <!-- RTL Bootstrap core CSS -->
     <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.0.0/css/bootstrap.min.css" integrity="sha384-P4uhUIGk/q1gaD/NdgkBIl3a6QywJjlsFJFk7SPRdruoGddvRVSwv5qFnvZ73cpz" crossorigin="anonymous">
@@ -81,16 +82,34 @@
 
           gtag('config', 'UA-39890589-7');
     }
+    function backHome() {
+        for (var i=2 ; i<4 ;i++) {
+            $('#cat' + i).hide();
+        }
+        var elem = $("#cat1");
+        var backDiv = $('.back-div');
+        $('div', elem).each(function () {
+            $(this).css('display', 'flex').hide().fadeIn(500);
+        });
+        backDiv.hide();
+        $('html, body').animate({
+            scrollTop: elem.offset().top
+        }, 1000);
+    }
     function removeEle(val) {
         var elem = $("#cat"+val);
-        console.log(elem);
+        var backDiv = $('.back-div');
         elem.css('display', 'flex').hide().fadeIn(500);
+        backDiv.css('display', 'flex').hide().fadeIn(500);
 
         elem = $('#cat1');
         $('div', elem).each(function () {
             $(this).hide();
-{#            speed = speed - 200;#}
         });
+        $('html, body').animate({
+            scrollTop: elem.offset().top - backDiv.height()
+        }, 1000);
+
         return false;
     }
 
@@ -111,9 +130,9 @@
     $(window).on('scroll', function(){
         var scrollTop = $(window).scrollTop();
         if (scrollTop > 200){
-          $(".arrow").fadeOut("slow");
+          $(".arrow").fadeOut();
         } else {
-          $(".arrow").fadeIn("slow");
+          $(".arrow").fadeIn();
         }
     });
 
