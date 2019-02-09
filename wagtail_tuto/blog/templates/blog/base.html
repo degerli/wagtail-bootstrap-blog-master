@@ -26,6 +26,13 @@
 
   </head>
 
+  <style>
+      @font-face {
+          font-family: 'baselwoff';
+          src: url({% static 'blog/font/Basl.woff' %}) format('woff');
+      }
+  </style>
+
   <body>
 {% if self.title != "home" %}
 
@@ -73,17 +80,18 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39890589-7"></script>
 
     <script type="text/javascript">
-    function changeFont() {
-        $("head").prepend("<style type=\"text/css\">" +
-            "@font-face {\n" +
-            "\tfont-family: \"baselwoff\";\n" +
-            "\tsrc: url({% static 'blog/font/Basl.woff' %}) format('woff');\n" +
-            "}\n" +
-            "\tdiv.printableArea {\n" +
-            "\tfont-family: baselwoff ;\n" +
-            "}\n" +
-            "</style>");
-    }
+
+        function changeFont() {
+            document.getElementById("printableArea").style.fontFamily = "baselwoff";
+            $("#returnFontButton").show();
+            $("#changeFontButton").hide();
+        }
+
+        function returnFont() {
+            document.getElementById("printableArea").style.fontFamily = "sans-serif";
+            $("#changeFontButton").show();
+            $("#returnFontButton").hide();
+        }
 
     if (document.location.hostname.search("wagtail.michaelyin.info") !== -1) {
           window.dataLayer = window.dataLayer || [];

@@ -29,7 +29,8 @@
             <hr>
 
             <input type="button" onclick="printDiv('printableArea')" value="تحميل النص" />
-            <input type="button" onclick="changeFont('printableArea')" value="شبيه لخط باسل" />
+            <input id="changeFontButton" type="button" onclick="changeFont()" value="شبيه لخط باسل" />
+            <input id="returnFontButton" type="button" onclick="returnFont()" style="display: none;" value="عودة للخط العادي" />
 
             {% post_tags_list %}
 
