@@ -1,3 +1,4 @@
+'''
 import os
 import sys
 
@@ -12,3 +13,12 @@ sys.path.append(os.path.join(app_path, 'wagtail_tuto'))
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "wagtail_tuto.settings.dev")
 
 application = get_wsgi_application()
+'''
+import os
+from django.core.wsgi import get_wsgi_application
+from whitenoise.django import DjangoWhiteNoise
+
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project_title.settings")
+
+application = get_wsgi_application()
+application = DjangoWhiteNoise(application)
