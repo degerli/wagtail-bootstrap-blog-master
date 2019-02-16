@@ -29,7 +29,6 @@ from modelcluster.fields import ParentalKey, ParentalManyToManyField
 from modelcluster.tags import ClusterTaggableManager
 from taggit.models import Tag as TaggitTag
 from taggit.models import TaggedItemBase
-from wagtailmd.utils import MarkdownField, MarkdownPanel
 
 
 class BlogPage(RoutablePageMixin, Page):
