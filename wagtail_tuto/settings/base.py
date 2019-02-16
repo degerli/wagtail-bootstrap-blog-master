@@ -103,10 +103,15 @@ WSGI_APPLICATION = 'wagtail_tuto.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'project_title_db',
+        'USER': 'postgres', #set this if you want
+        'PASSWORD': 'postgres', #set this if you want
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
+
 
 
 # Internationalization
