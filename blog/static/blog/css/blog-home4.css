@@ -1,0 +1,374 @@
+/*!
+ * Start Bootstrap - Blog Home (https://startbootstrap.com/template-overviews/blog-home)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-blog-home/blob/master/LICENSE)
+ */
+@import url('https://fonts.googleapis.com/css?family=Lalezar');
+
+body {
+    margin-top: 70px;
+    font-size: 16px;
+}
+
+/* https://bootsnipp.com/snippets/featured/user-profile-sidebar */
+
+/***
+User Profile Sidebar by @keenthemes
+A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
+Licensed under MIT
+***/
+
+/* body { */
+/*   background: #F1F3FA; */
+/* } */
+
+
+.arrow {
+    z-index: 900;
+    white-space: nowrap;
+    font-size: 4rem;
+    position: absolute;
+    right: 0;
+    bottom: 50px;
+    left: 0;
+    margin: auto;
+    width: 40px;
+    height: 40px;
+    transform: translateY(0);
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 750ms ease-in-out;
+    -ms-transition: all 750ms ease-in-out;
+    -o-transition: all 750ms ease-in-out;
+    transition: all 750ms ease-in-out;
+    color: #fff;
+    cursor: pointer;
+    opacity: .5;
+}
+
+/* this sets the position of the arrow when it's up, so it will move up or down by 14px when you add or remove this class */
+.lift {
+    transform: translateY(14px);
+}
+.arrow-hidden {
+    display: none;
+
+}
+.home-header {
+
+}
+.home-page {
+  font-family: 'Lalezar', cursive;
+    background-color: wheat;
+    max-width: 100%;
+}
+.home-header > div {
+    height: 700px;
+    overflow: hidden;
+    min-height: 500px;
+    width: 100%;
+    text-align: center;
+}
+.home-card-text {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: wheat;
+    text-decoration: none;
+    font-size: 4rem;
+    background: #00000059;
+    padding: 13px;
+}
+.home-card-text a {
+  color: wheat;
+  text-decoration: none;
+}
+a {
+  cursor: pointer;
+}
+.cat > div {
+    padding: 0;
+    margin: 0;
+    height: 600px;
+    overflow: hidden;
+}
+.home-page  img {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+
+figure.effect-apollo {
+	background: #634a00;
+    margin: 0;
+    height:100%;
+    width:100%;
+}
+
+figure.effect-apollo img {
+	opacity: 0.9;
+	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+	transition: opacity 0.35s, transform 0.35s;
+	-webkit-transform: scale3d(1.05,1.05,1);
+	transform: scale3d(1.05,1.05,1);
+}
+
+figure.effect-apollo figcaption::before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(41, 41, 41, 0.5);
+	content: '';
+	-webkit-transition: -webkit-transform 0.6s;
+	transition: transform 0.6s;
+	-webkit-transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-100%,0);
+	transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,-100%,0);
+}
+
+figure.effect-apollo p {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	margin: 3em;
+	padding: 0 1em;
+	max-width: 150px;
+	border-right: 4px solid #fff;
+	text-align: right;
+	opacity: 0;
+	-webkit-transition: opacity 0.35s;
+	transition: opacity 0.35s;
+}
+
+figure.effect-apollo h2 {
+}
+
+figure.effect-apollo:hover img {
+	opacity: 0.6;
+	-webkit-transform: scale3d(1,1,1);
+	transform: scale3d(1,1,1);
+}
+
+figure.effect-apollo:hover figcaption::before {
+	-webkit-transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);
+	transform: scale3d(1.9,1.4,1) rotate3d(0,0,1,45deg) translate3d(0,100%,0);
+}
+
+figure.effect-apollo:hover p {
+	opacity: 1;
+	-webkit-transition-delay: 0.1s;
+	transition-delay: 0.1s;
+}
+/* Profile container */
+.profile {
+  margin: 20px 0;
+}
+
+/* Profile sidebar */
+.profile-sidebar {
+  padding: 20px 0 10px 0;
+  background: #fff;
+}
+
+.profile-userpic img {
+  float: none;
+  margin: 0 auto;
+  width: 70%;
+  height: 70%;
+  -webkit-border-radius: 50% !important;
+  -moz-border-radius: 50% !important;
+  border-radius: 50% !important;
+}
+
+.profile-usertitle {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.profile-usertitle-name {
+  color: #5a7391;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.profile-usertitle-job {
+  text-transform: uppercase;
+  color: #5b9bd1;
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.profile-userbuttons {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.profile-userbuttons .btn {
+  text-transform: uppercase;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 15px;
+  margin-right: 5px;
+}
+
+.profile-userbuttons .btn:last-child {
+  margin-right: 0px;
+}
+
+.profile-usermenu {
+  margin-top: 30px;
+}
+
+.profile-usermenu ul li {
+  border-bottom: 1px solid #f0f4f7;
+}
+
+.profile-usermenu ul li:last-child {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li a {
+  color: #93a3b5;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.profile-usermenu ul li a i {
+  margin-right: 8px;
+  font-size: 14px;
+}
+
+.profile-usermenu ul li a:hover {
+  background-color: #fafcfd;
+  color: #5b9bd1;
+}
+
+.profile-usermenu ul li.active {
+  border-bottom: none;
+}
+
+.profile-usermenu ul li.active a {
+  color: #5b9bd1;
+  background-color: #f6f9fb;
+  border-left: 2px solid #5b9bd1;
+  margin-left: -2px;
+}
+
+/* Profile Content */
+.profile-content {
+  padding: 20px;
+  background: #fff;
+  min-height: 460px;
+}
+
+.photo
+{
+  z-index: 3;
+  position: relative;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  background-color: white;
+  margin: 0 auto;
+  background-image: url("https://filmshotfreezer.files.wordpress.com/2011/07/untitled-1.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+  top:50px;
+  -webkit-box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.3);
+  -moz-box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.3);
+  box-shadow: inset 0px 0px 5px 1px rgba(0,0,0,0.3);
+  -webkit-transition: top 0.7s ease-in-out, background 0.15s ease;
+  -moz-transition:    top 0.7s ease-in-out, background 0.15s ease;
+  -o-transition:      top 0.7s ease-in-out, background 0.15s ease;
+  -ms-transition:     top 0.7s ease-in-out, background 0.15s ease;
+}
+
+.qout ul
+{
+  list-style: none;
+  text-align: center;
+  padding: 0;
+  margin-top:25px;
+  margin-bottom:30px;
+  font-size: 20px;
+  -webkit-transition: all 0.7s ease-in-out;
+  -moz-transition:    all 0.7s ease-in-out;
+  -o-transition:      all 0.7s ease-in-out;
+  -ms-transition:     all 0.7s ease-in-out;
+}
+
+.qout i
+{
+  font-size: 25px;
+  display: inline-block;
+  margin-top:10px;
+  margin-left: 40px;
+  margin-right: 150px;
+  width: 300px;;
+  text-align: left;
+  color: #C7D0E1;
+}
+.back-div {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    width: 100%;
+    height: 100px;
+    display: none;
+    background: black;
+}
+.back-div a {
+    text-align: center;
+    font-size: 2rem;
+    color: #f5deb3 !important;
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+    margin: auto 0 auto 0;
+}
+.back-div a i {
+    position: relative;
+    top: 8px;
+    padding-left: 10px;
+}
+@media (min-width: 0px) and (min-width: 576px) {
+    .home-header > div {
+        height: 600px;
+    }
+    .cat > div {
+        height: 600px;
+    }
+    .back-div {
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+    }
+    .back-div a {
+        text-align: center;
+    }
+
+}
+
+@media (min-width: 768px) {
+    .back-div {
+        position: relative;
+        width: 100%;
+        height: 100px;
+        display: none;
+        background: black;
+    }
+    .back-div a {
+        text-align: right;
+    }
+
+}
+
+@media (min-width: 992px) { }
+
+@media (min-width: 1200px) {
+
+}
