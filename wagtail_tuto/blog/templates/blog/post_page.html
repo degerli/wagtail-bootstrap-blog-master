@@ -7,12 +7,16 @@
 {% block canonical %}{% canonical_url self%}{% endblock canonical %}
 
 {% block content %}
-<div class="container">
-    <div class="row">
-        <div class="col-md-8">
+      <!-- Page Content -->
+<div id="wrapper" class="">
+      <div id="page-content-wrapper">
+         <div class="container-fluid xyz">
+            <div class="row">
+               <div class="col-lg-12">
+
             {% if post.header_image %}
                 {% image post.header_image original as header_image %}
-                <img src="{{ header_image.url }}" class="img-fluid rounded" ></img>
+                <img src="{{ header_image.url }}" class="img-fluid rounded" >
                 <hr>
             {% endif %}
             <h1>{{ post.title }}</h1>
@@ -62,7 +66,11 @@
                src="//cdn.mathjax.org/mathjax/latest/MathJax.js">
             </script>
         </div>
-        {% include 'blog/components/sidebar.html' %}
     </div>
+     </div>
+          </div>
+        {% include 'blog/components/sidebar.html' %}
+
+
 </div>
 {% endblock %}
