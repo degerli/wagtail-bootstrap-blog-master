@@ -29,9 +29,9 @@
                                     <li><b>باسل الأعرج</b></li>
                                     <li>
                                         {% if post.excerpt %}
-                                        {{ post.excerpt|markdown|safe }}
+                                        {{ post.excerpt|safe }}
                                         {% else %}
-                                        {{ post.body|markdown|safe|truncatewords_html:20 }}
+                                        {{ post.body|safe|truncatewords_html:20 }}
                                         {% endif %}
                                     </li>
                                 </ul>
@@ -75,9 +75,9 @@
                           </h2>
                           <p class="card-text">
                             {% if post.excerpt %}
-                                {{ post.excerpt|markdown|safe }}
+                                {{ post.excerpt|safe }}
                             {% else %}
-                                {{ post.body|markdown|safe|truncatewords_html:20 }}
+                                {{ post.body|safe|truncatewords_html:20 }}
                             {% endif %}
                           </p>
                           <a href="{% post_date_url post blog_page %}" class="btn btn-primary">أكمل القراءة &rarr;</a>
