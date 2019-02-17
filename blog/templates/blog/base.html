@@ -1,0 +1,310 @@
+{% load static wagtailcore_tags wagtailimages_tags wagtailuserbar blogapp_tags el_pagination_tags menu_tags wagtailmd wagtailroutablepage_tags %}
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>{% block title %}{{ blog_page.title }}{% if blog_page.description %} | {{ blog_page.description }}{% endif %}{% endblock title %}</title>
+    <meta name="description" content="{% block meta_description %}{{ blog_page.search_description }}{% endblock meta_description %}"/>
+
+    <link rel="canonical" href="{% block canonical %}{% canonical_url %}{% endblock canonical %}"/>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+
+    <!-- RTL Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://cdn.rtlcss.com/bootstrap/v4.0.0/css/bootstrap.min.css" integrity="sha384-P4uhUIGk/q1gaD/NdgkBIl3a6QywJjlsFJFk7SPRdruoGddvRVSwv5qFnvZ73cpz" crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="{% static 'blog/css/blog-home4.css' %}" rel="stylesheet">
+
+    <link href="{% static 'blog/css/default.css' %}" rel="stylesheet">
+
+  </head>
+
+  <style>
+      @font-face {
+          font-family: 'baselwoff';
+          src: url({% static 'blog/font/Basl.woff' %}) format('woff');
+      }
+  </style>
+
+  <body>
+{% if self.title != "home" %}
+
+    {% wagtailuserbar %}
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="/">الشهيد باسل الأعرج</a>
+          <div class="col-sm-4">
+            <form role="search" method="get" class="form-search" method="get" action="{% routablepageurl blog_page "post_search" %}">
+                <div class="input-group">
+                    <input type="text" class="form-control search-query" name="q" placeholder="Search&hellip;" title="Search for:" />
+                    <span class="input-group-btn">
+                    <button class="btn btn-secondary" type="button">ابحث</button>
+                    </span>
+                </div>
+            </form>
+          </div>
+      </div>
+    </nav>
+{% endif %}
+    <!-- Page Content -->
+    {% block maincontent %}
+
+            {% block content %}
+
+            {% endblock %}
+
+    {% endblock %}
+
+    <!-- Footer -->
+
+
+    <!-- jQuery -->
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script src="https://files.codepedia.info/files/uploads/iScripts/html2canvas.js"></script>
+
+    <!-- RTL Bootstrap Core JavaScript -->
+    <script src="https://cdn.rtlcss.com/bootstrap/v4.0.0/js/bootstrap.min.js" integrity="sha384-54+cucJ4QbVb99v8dcttx/0JRx4FHMmhOWi4W+xrXpKcsKQodCBwAvu3xxkZAwsH" crossorigin="anonymous"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-39890589-7"></script>
+
+    <script type="text/javascript">
+
+        function changeFont() {
+            document.getElementById("printableArea").style.fontFamily = "baselwoff";
+            $("#returnFontButton").show();
+            $("#changeFontButton").hide();
+        }
+
+        function returnFont() {
+            document.getElementById("printableArea").style.fontFamily = "sans-serif";
+            $("#changeFontButton").show();
+            $("#returnFontButton").hide();
+        }
+
+    if (document.location.hostname.search("wagtail.michaelyin.info") !== -1) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-39890589-7');
+    }
+    function backHome() {
+        for (var i=2 ; i<4 ;i++) {
+            $('#cat' + i).hide();
+        }
+        var elem = $("#cat1");
+        var backDiv = $('.back-div');
+        $('div', elem).each(function () {
+            $(this).css('display', 'flex').hide().fadeIn(500);
+        });
+        backDiv.hide();
+        $('html, body').animate({
+            scrollTop: elem.offset().top
+        }, 1000);
+    }
+    function removeEle(val) {
+        var elem = $("#cat"+val);
+        var backDiv = $('.back-div');
+        elem.css('display', 'flex').hide().fadeIn(500);
+        backDiv.css('display', 'flex').hide().fadeIn(500);
+
+        elem = $('#cat1');
+        $('div', elem).each(function () {
+            $(this).hide();
+        });
+        $('html, body').animate({
+            scrollTop: elem.offset().top - backDiv.height()
+        }, 1000);
+
+        return false;
+    }
+
+    </script>
+    {% if self.title == "home" %}
+    <script type="text/javascript">
+
+    var arrowBounce = function() {
+        var arrow = $(".arrow");
+        if (arrow.hasClass("lift")) {
+            arrow.removeClass("lift");
+        } else {
+            arrow.addClass("lift");
+        }
+    };
+    setInterval(arrowBounce, 800);
+    var prev=0;
+    $(window).on('scroll', function(){
+        var scrollTop = $(window).scrollTop();
+        if (scrollTop > 200){
+          $(".arrow").fadeOut();
+        } else {
+          $(".arrow").fadeIn();
+        }
+    });
+
+
+    $(".arrow").click(function() {
+        $('html, body').animate({
+            scrollTop: $("#cat1").offset().top
+        }, 1000);
+    });
+    </script>
+    {% endif %}
+
+    {% if self.title == "منشوراته" %}
+    <script type="text/javascript">
+        function download(name) {
+            var element = $("#card_" + name); // global variable
+            var getCanvas; // global variable
+            console.log(1);
+            html2canvas(element, {
+                onrendered: function (canvas) {
+                    getCanvas = canvas;
+                    var imgageData = getCanvas.toDataURL("image/png");
+                    // Now browser starts downloading it instead of just showing it
+                    download2(imgageData, "basel"+name, "png");
+                }
+            });
+        }
+
+    function download2(data, strFileName, strMimeType) {
+
+        var self = window, // this script is only for browsers anyway...
+            u = "application/octet-stream", // this default mime also triggers iframe downloads
+            m = strMimeType || u,
+            x = data,
+            D = document,
+            a = D.createElement("a"),
+            z = function(a){return String(a);},
+
+
+            B = self.Blob || self.MozBlob || self.WebKitBlob || z,
+            BB = self.MSBlobBuilder || self.WebKitBlobBuilder || self.BlobBuilder,
+            fn = strFileName || "download",
+            blob,
+            b,
+            ua,
+            fr;
+
+        //if(typeof B.bind === 'function' ){ B=B.bind(self); }
+
+        if(String(this)==="true"){ //reverse arguments, allowing download.bind(true, "text/xml", "export.xml") to act as a callback
+            x=[x, m];
+            m=x[0];
+            x=x[1];
+        }
+
+
+
+        //go ahead and download dataURLs right away
+        if(String(x).match(/^data\:[\w+\-]+\/[\w+\-]+[,;]/)){
+            return navigator.msSaveBlob ?  // IE10 can't do a[download], only Blobs:
+                navigator.msSaveBlob(d2b(x), fn) :
+                saver(x) ; // everyone else can save dataURLs un-processed
+        }//end if dataURL passed?
+
+        try{
+
+            blob = x instanceof B ?
+                x :
+                new B([x], {type: m}) ;
+        }catch(y){
+            if(BB){
+                b = new BB();
+                b.append([x]);
+                blob = b.getBlob(m); // the blob
+            }
+
+        }
+
+
+
+        function d2b(u) {
+            var p= u.split(/[:;,]/),
+                t= p[1],
+                dec= p[2] == "base64" ? atob : decodeURIComponent,
+                bin= dec(p.pop()),
+                mx= bin.length,
+                i= 0,
+                uia= new Uint8Array(mx);
+
+            for(i;i<mx;++i) uia[i]= bin.charCodeAt(i);
+
+            return new B([uia], {type: t});
+        }
+
+        function saver(url, winMode){
+
+
+            if ('download' in a) { //html5 A[download]
+                a.href = url;
+                a.setAttribute("download", fn);
+                a.innerHTML = "downloading...";
+                D.body.appendChild(a);
+                setTimeout(function() {
+                    a.click();
+                    D.body.removeChild(a);
+                    if(winMode===true){setTimeout(function(){ self.URL.revokeObjectURL(a.href);}, 250 );}
+                }, 66);
+                return true;
+            }
+
+            //do iframe dataURL download (old ch+FF):
+            var f = D.createElement("iframe");
+            D.body.appendChild(f);
+            if(!winMode){ // force a mime that will download:
+                url="data:"+url.replace(/^data:([\w\/\-\+]+)/, u);
+            }
+
+
+            f.src = url;
+            setTimeout(function(){ D.body.removeChild(f); }, 333);
+
+        }//end saver
+
+
+        if (navigator.msSaveBlob) { // IE10+ : (has Blob, but not a[download] or URL)
+            return navigator.msSaveBlob(blob, fn);
+        }
+
+        if(self.URL){ // simple fast and modern way using Blob and URL:
+            saver(self.URL.createObjectURL(blob), true);
+        }else{
+            // handle non-Blob()+non-URL browsers:
+            if(typeof blob === "string" || blob.constructor===z ){
+                try{
+                    return saver( "data:" +  m   + ";base64,"  +  self.btoa(blob)  );
+                }catch(y){
+                    return saver( "data:" +  m   + "," + encodeURIComponent(blob)  );
+                }
+            }
+
+            // Blob but not URL:
+            fr=new FileReader();
+            fr.onload=function(e){
+                saver(this.result);
+            };
+            fr.readAsDataURL(blob);
+        }
+        return true;
+    } /* end download() */
+    </script>
+    {% endif %}
+
+
+  </body>
+
+</html>
+
